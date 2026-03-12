@@ -1,4 +1,4 @@
-# Closing the Loop: Joint 6D Pose Optimization and Single-View 3D Reconstruction
+# Closing the Loop: Joint Shape–Pose Optimization for Single-View 3D Reconstruction
 
 # Abstract
 
