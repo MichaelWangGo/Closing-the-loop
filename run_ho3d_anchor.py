@@ -63,7 +63,7 @@ if __name__=='__main__':
             mask_refine = running_sam_box(color, input_box)
 
             input_image = preprocess_image(color, mask_refine, save_path, obj)
-            import ipdb; ipdb.set_trace()
+            
             images = diffusion_image_generation(save_path, save_path, obj, input_image=input_image)
             instant_mesh_process(images, save_path, obj)
 
