@@ -49,7 +49,6 @@ if __name__=='__main__':
             obj_num = 9
 
 
-
         save_path = f'{anchor_folder}/{obj}'
         mesh_path = os.path.join(f'{anchor_folder}/{obj}/mesh_{obj}.obj')
 
@@ -64,6 +63,7 @@ if __name__=='__main__':
             mask_refine = running_sam_box(color, input_box)
 
             input_image = preprocess_image(color, mask_refine, save_path, obj)
+            import ipdb; ipdb.set_trace()
             images = diffusion_image_generation(save_path, save_path, obj, input_image=input_image)
             instant_mesh_process(images, save_path, obj)
 
@@ -85,8 +85,8 @@ if __name__=='__main__':
 
         gt_pose = np.loadtxt(os.path.join(save_path, f'{obj}_gt_pose.txt'))
 
-
-        gt_mesh = trimesh.load(f'{ycb_model_path}/models/{obj}/textured_simple.obj')
+        # import ipdb; ipdb.set_trace()
+        gt_mesh = trimesh.load(f'{ycb_model_path}/{obj}/textured_simple.obj')
 
         visualize_frame_results(color=color, gt_mesh=gt_mesh, est=est, K=intrinsic, gt_pose=gt_pose, pred_pose=pred_pose,
                                 metric=None, obj_f=obj, frame_idx=0, save_path=save_path, glctx=glctx,

@@ -23,7 +23,7 @@ if __name__=='__main__':
     seed_everything(0)
 
     parser = argparse.ArgumentParser(description="Set experiment name and paths")
-    parser.add_argument("--ycb_model_path", type=str, default="/home/miruware/ssd_4tb/dataset/ho3d/YCB_Video_Models", help="Path to the YCB Video Models")
+    parser.add_argument("--ycb_model_path", type=str, default="/workspace/Any6D/ho3d/YCB_Video_Models", help="Path to the YCB Video Models")
     parser.add_argument("--img_to_3d", action="store_true",help="Running with InstantMesh+SAM2")
     args = parser.parse_args()
 
@@ -33,9 +33,9 @@ if __name__=='__main__':
 
     results = []
     demo_path = 'demo_data'
-    mesh_path = os.path.join(demo_path, f'mustard.obj')
+    mesh_path = os.path.join(demo_path, f'mug.obj')
 
-    obj = 'demo_mustard'
+    obj = 'demo_025'
     save_path = f'results/{obj}'
     if not os.path.exists(save_path):
         os.makedirs(save_path)
@@ -85,8 +85,8 @@ if __name__=='__main__':
     tmp = pose_list[index]
     gt_pose = np.eye(4)
     gt_pose[:3, :] = tmp
-
-    gt_mesh = trimesh.load(f'{ycb_model_path}/models/006_mustard_bottle/textured_simple.obj')
+    # import ipdb; ipdb.set_trace()
+    gt_mesh = trimesh.load(f'{ycb_model_path}/025_mug/textured_simple.obj')
 
     chamfer_dis = calculate_chamfer_distance_gt_mesh(gt_pose, gt_mesh, pred_pose, est.mesh)
     print(chamfer_dis)

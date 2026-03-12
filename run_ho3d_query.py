@@ -1,5 +1,6 @@
 import copy
-
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 from foundationpose.datareader import Ho3dReader
 from estimater import *
 from bop_toolkit_lib.pose_error_custom import mssd, mspd, vsd

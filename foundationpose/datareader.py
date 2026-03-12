@@ -152,8 +152,8 @@ class Ho3dReader:
     return ob_in_cam_gt
 
 
-  def get_gt_mesh(self, model_dir='/home/miruware/ssd_4tb/dataset/ho3d/YCB_Video_Models'):
-    mesh = trimesh.load(f'{model_dir}/models/{self.get_video_name_full()}/textured_simple.obj')
+  def get_gt_mesh(self, model_dir='/workspace/Any6D/ho3d/YCB_Video_Models'):
+    mesh = trimesh.load(f'{model_dir}/{self.get_video_name_full()}/textured_simple.obj')
     return mesh
 
 

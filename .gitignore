@@ -29,6 +29,8 @@ sam2/outputs/*
 sam2/checkpoints/*.pt
 
 
+anchor_results/*
+ho3d/*
 
 
 

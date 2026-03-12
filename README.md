@@ -48,8 +48,7 @@ pip install --extra-index-url https://miropsota.github.io/torch_packages_builder
 CMAKE_PREFIX_PATH=$CONDA_PREFIX/lib/python3.9/site-packages/pybind11/share/cmake/pybind11 bash foundationpose/build_all_conda.sh
 
 # build SAM2
-cd sam2 && pip install -e . && cd checkpoints && \
-./download_ckpts.sh && \
+cd sam2 && pip install -e . && cd checkpoints && \ ./download_ckpts.sh && \
 cd ..
 
 # build InstantMesh 
